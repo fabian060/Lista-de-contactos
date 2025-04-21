@@ -1,0 +1,207 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+:root{
+    color-scheme: light dark;
+    --bg-color: light-dark(#f1f1f159, #252525);
+    --box-shadow: light-dark(#00000056, #616161);
+    --input-text: light-dark(#6161614d, #5251519d);
+    --text-color: light-dark(#000000, #ffffff);
+    --item-button-color: light-dark(#08fd00a1, #08fd00a1);
+    --task-item-delete-button-color: light-dark(#fd0000a1, #fd0000a1);
+    --task-item-check-button-color: light-dark(#0400ffa1, #0400ffa1);  
+}
+
+body, h2, p, h1 {
+  margin: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+
+#main-container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	max-width: 90rem;
+	margin: 0 auto;
+	gap: 2rem;
+}
+
+#main-form {
+	padding: 0.8rem;
+	border-radius: 1rem 1rem 1rem 1rem;
+	display: flex;
+	box-shadow: 0 2px 10px var(--box-shadow);
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.main-form-input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.form-input {
+	outline: 1px solid var(--text-color);
+	border-radius: 0.375rem;
+	padding: 0.5rem;
+}
+
+.main-form-helper-text {
+	font-size: 0.75rem;
+	font-weight: 300;
+	color: red;
+	display: none;
+}
+
+#main-form-btn {
+	background-color: var(--item-button-color);
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	text-align: center;
+	font-weight: 500;
+	border-radius: 0.375rem;
+    box-shadow: 0 2px 10px var(--box-shadow);
+    transition: all 0.3s ease;
+}
+
+#main-form-btn:hover {
+    background-color: var(--item-button-color);
+    transform: scale(1.02)
+}
+
+#contacts-list {
+	margin: 0;
+	padding: 0.8rem;
+	list-style: none;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	border-radius: 1rem 1rem 1rem 1rem;
+	box-shadow: 0 2px 10px var(--box-shadow);
+	height: 100%;
+}
+
+.edit-btn {
+	width: 2rem;
+	height: 2rem;
+    border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+    transition: all 0.3s ease;
+    background-color: var(--task-item-check-button-color);
+    box-shadow: 0 0.1rem 0.6rem var(--box-shadow); 
+    margin: 0.5rem;
+}
+
+.edit-btn:hover {
+    background-color: var(--task-item-check-button-color);
+    transform: scale(1.1)
+}
+
+.delete-btn {
+	width: 2rem;
+	height: 2rem;
+    border-radius: 0.3rem 0.3rem 0.3rem 0.3rem;
+    transition: all 0.3s ease;
+    background-color: var(--task-item-delete-button-color);
+    box-shadow: 0 0.1rem 0.6rem var(--box-shadow); 
+    margin: 0.5rem;
+}
+
+.delete-btn:hover {
+    background-color: var(--task-item-delete-button-color);
+    transform: scale(1.1)
+}
+
+.inputs-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	flex-grow: 1;
+}
+
+.editable-input {
+	border: 1px solid;
+}
+
+.contacts-list-item-name-input,
+.contacts-list-item-phone-input {
+	width: 100%;
+	outline: none;
+	border-radius: 1rem 1rem 1rem 1rem;
+	padding: 0.5rem;
+    text-align: center;
+    box-shadow: 0 0.1rem 0.6rem var(--box-shadow);
+}
+
+.btns-container {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.contacts-list-item {
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+}
+
+#main-form-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.input-valid {
+	outline: 1px solid green;
+}
+
+.input-invalid {
+	outline: 1px solid red;
+}
+
+.show-helper-text {
+	display: block;
+}
+
+
+@media (min-width: 768px) {
+	#main-form {
+		width: 70%;
+	}
+
+	#contacts-list {
+		width: 70%;
+	}
+
+	.inputs-container {
+		flex-wrap: nowrap;
+	}
+
+	#main-container {
+		align-items: center;
+	}
+}
+
+@media (min-width: 1024px) {
+	#main-form {
+		width: 50%;
+	}
+
+	#contacts-list {
+		width: 50%;
+	}
+}
